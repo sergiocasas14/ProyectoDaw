@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     background-image: url(../imagenes/fondo-login.avif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,15 +16,15 @@ body{
     background-attachment: fixed;
 }
 
-header{
+header {
     width: 100%;
     height: 100px;
     position: fixed;
     z-index: 100;
 }
 
-/*-----------------estilos contenedores login--------------*/
-.contenedor_todo{
+/* Estilos contenedores login */
+.contenedor_todo {
     width: 100%;
     max-width: 800px;
     margin: auto;
@@ -32,53 +32,50 @@ header{
     padding-top: 50px;
 }
 
-.caja_trasera{
+.caja_trasera {
     width: 100%;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(10px); /*para desenfocar*/
+    backdrop-filter: blur(10px); /* Para desenfocar */
     background-color: rgba(0, 128, 255, 0.3);
 }
 
-.caja_trasera div{
+.caja_trasera div {
     margin: 100px 40px;
     color: white;
-    transition: all 500ms; /*transición de caja*/
+    transition: all 500ms; /* Transición de caja */
 }
 
 .caja_trasera div p,
-.caja_trasera div button{
+.caja_trasera div button {
     margin-top: 30px;
 }
 
-.caja_trasera div h3{
-
-    font-weight: 400px;
+.caja_trasera div h3 {
+    font-weight: 400;
     font-size: 26px;
 }
 
-.caja_trasera button{
+.caja_trasera button {
     padding: 10px 40px;
     border: 2px solid #fff;
     background: transparent;
     font-size: 14px;
-    font-weight: 600px;
-    cursor: pointer; 
+    font-weight: 600;
+    cursor: pointer;
     color: white;
     outline: none;
     transition: all 300ms;
 }
 
-.caja_trasera button:hover{
+.caja_trasera button:hover {
     background: #fff;
     color: #46a2fd;
-
 }
 
-/*----------Formularios---------------------------------------------*/
-
-.contenedor_login_register{
+/* Formularios */
+.contenedor_login_register {
     display: flex;
     align-items: center;
     width: 100%;
@@ -86,12 +83,10 @@ header{
     position: relative;
     top: -185px;
     left: 10px;
-
-    /*La transicion va despues del codigo JS*/
     transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
-.contenedor_login_register form{
+.contenedor_login_register form {
     width: 100%;
     padding: 80px 20px;
     background: white;
@@ -99,14 +94,14 @@ header{
     border-radius: 20px;
 }
 
-.contenedor_login_register form h2{
+.contenedor_login_register form h2 {
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
     color: #46A2FD;
 }
 
-.contenedor_login_register form input{
+.contenedor_login_register form input {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
@@ -116,7 +111,7 @@ header{
     outline: none;
 }
 
-.contenedor_login_register form button{
+.contenedor_login_register form button {
     padding: 10px 40px;
     margin-top: 40px;
     border: none;
@@ -128,221 +123,56 @@ header{
     outline: none;
 }
 
-
-.formulario_login{
+.formulario_login {
     opacity: 1;
     display: block;
 }
-.formulario_register{
+
+.formulario_register {
     display: none;
 }
 
+/* Nuevos estilos para móviles */
+@media screen and (max-width: 850px) {
+    .caja_trasera {
+        flex-direction: column;
+        height: auto;
+        position: static;
+    }
 
+    .caja_trasera div {
+        margin: 20px 0;
+        text-align: center;
+    }
 
+    .contenedor_login_register {
+        top: 0;
+        flex-direction: column;
+        position: static;
+        left: 0;
+    }
 
-/*estilos menu*/
-.navbar {
-    background-color: black !important; /* Asegura que se aplique el color de fondo */
-    padding: 10px 20px;
-    color: #485663; /* Color de texto */
-    align-items: center;
-}
-  
-  .navbar .navbar-brand img {
-    border-radius: 50%; /* Haz que el logo sea redondo */
-  }
-  
-  .navbar .navbar-nav .nav-link {
-    color: black; /* Cambia el color de los enlaces a blanco */
-    padding: 30px 45px; /* Ajusta el espaciado */
-  }
-  
-  .navbar .navbar-nav .nav-link:hover {
-    color: #ffd700; /* Cambia el color del enlace cuando pasas el cursor por encima */
-  }
-  
-  .navbar .nav-item .nav-link.disabled {
-    color: black; /* Cambia el color de los enlaces deshabilitados */
-  }
+    .contenedor_login_register form {
+        position: relative;
+    }
 
+    .formulario_login,
+    .formulario_register {
+        display: none;
+    }
 
-/*portada de inicio*/
+    .formulario_login.active,
+    .formulario_register.active {
+        display: block;
+    }
 
-.container__cover{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background: var(--main_color-secundary);
-}
+    .caja_trasera_register {
+        display: block;
+        opacity: 1;
+    }
 
-.cover{
-    max-width: 1200px;
-    margin: auto;
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
-}
-
-.text__cover{
-    width: 100%;
-    padding-right: 150px;
-}
-
-.text__cover h1{
-    font-size: 50px;
-    color: var(--color_text-secundary);
-}
-
-.text__cover p{
-    font-size: var(--text_paragraph);
-    margin-top: 40px;
-    color: var(--color_text-tertiary);
-}
-
-.btn__text{
-    display: block;
-    width: 150px;
-    margin-top: 40px;
-    padding: 10px 20px;
-    text-align: center;
-    font-weight: 500;
-    background: var(--main_color-primary);
-    color: white;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 300ms;
-}
-
-.btn__text:hover{
-    background: transparent;
-    border: 2px solid var(--main_color-primary);
-    color: var(--color_text-primary);
-}
-
-.image__cover{
-    width: 100%;
-}
-
-.image__cover img{
-    width: 550px;
-}
-
-
-/*Estilos generales CARDS*/
-
-.container__card-primary{
-    padding-top: 100px;
-}
-
-.card__primary{
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-    padding: 0px 20px;
-}
-
-.text__card-primary{
-    max-width: 800px;
-    margin: auto;
-}
-
-.text__card-primary p{
-    color: var(--color_text-primary);
-    letter-spacing: 4px;
-    font-size: var(--text_paragraph);
-    font-weight: 500;
-}
-
-.text__card-primary h1{
-    font-size: var(--text_size_title);
-    font-weight: 600;
-    color: var(--color_text-secundary);
-}
-
-.container__box-cardPrimary{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.box__card-primary{
-    max-width: 350px;
-    padding: 60px 40px;
-    border: 1px solid #e6e6e6;
-    border-radius: 20px;
-    margin: 14px;
-    transition: all 300ms;
-}
-
-.box__card-primary:hover{
-    border: 1px solid transparent;
-    box-shadow: var(--box_shadow-primary);
-}
-
-.box__card-primary h2{
-    font-size: var(--text_title_card);
-    margin-top: 40px;
-    font-weight: 500;
-}
-
-.box__card-primary p{
-    margin-top: 20px;
-}
-
-/*Sobre nosotros*/
-
-.container__about{
-    padding: 100px 0px;
-    background: var(--background-color);
-    margin-top: 100px;
-}
-
-.about{
-    max-width: 1200px;
-    margin: auto;
-    padding: 0px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.text__about{
-    width: 100%;
-    padding-right: 40px;
-}
-
-.text__about h1{
-    color: var(--color_text-secundary);
-    font-weight: 600;
-}
-
-.text__about p{
-    font-size: var(--text_paragraph);
-    margin-top: 40px;
-    color: var(--color_text-tertiary);
-}
-
-
-.image__about{
-    width: 100%;
-    display: flex;
-}
-
-.image__about img{
-    width: 300px;
-}
-
-/*Servicios*/
-
-.card__service img{
-    width: 50px;
-}
-
-.card__service i{
-    font-size: 24px;
-    margin-top: 20px;
-    cursor: pointer;
-    color: var(--color_text-primary);
+    .caja_trasera_login {
+        display: block;
+        opacity: 1;
+    }
 }

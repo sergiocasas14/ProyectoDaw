@@ -11,54 +11,42 @@ var caja_trasera_login = document.querySelector(".caja_trasera_login");
 var caja_trasera_register = document.querySelector(".caja_trasera_register");
 
 // Funciones
-
 function anchoPage() {
     if (window.innerWidth > 850) {
         caja_trasera_register.style.display = "block";
         caja_trasera_login.style.display = "block";
         contenedor_login_register.style.flexDirection = "row";
+        formulario_login.classList.add("active");
     } else {
         caja_trasera_register.style.display = "block";
         caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.display = "none";
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        contenedor_login_register.style.flexDirection = "column";
-        formulario_register.style.display = "none";
+        caja_trasera_login.style.display = "block";
+        formulario_login.classList.remove("active");
+        formulario_register.classList.remove("active");
     }
 }
 
-anchoPage();
-
 function iniciarSesion() {
     if (window.innerWidth > 850) {
-        formulario_login.style.display = "block";
+        formulario_login.classList.add("active");
+        formulario_register.classList.remove("active");
         contenedor_login_register.style.left = "10px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.opacity = "0";
     } else {
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.display = "block";
-        caja_trasera_login.style.display = "none";
+        formulario_login.classList.add("active");
+        formulario_register.classList.remove("active");
     }
 }
 
 function register() {
     if (window.innerWidth > 850) {
-        formulario_register.style.display = "block";
+        formulario_register.classList.add("active");
+        formulario_login.classList.remove("active");
         contenedor_login_register.style.left = "410px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.opacity = "0";
-        caja_trasera_login.style.opacity = "1";
     } else {
-        formulario_register.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.display = "none";
-        caja_trasera_login.style.display = "block";
-        caja_trasera_login.style.opacity = "1";
+        formulario_register.classList.add("active");
+        formulario_login.classList.remove("active");
     }
 }
+
+// Ejecutar al cargar la página
+anchoPage();
